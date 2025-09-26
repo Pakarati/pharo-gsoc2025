@@ -15,8 +15,7 @@ Class {
 	#superclass : 'TestCase',
 	#instVars : [
 		'docCommentNode',
-		'methodSource',
-		'method'
+		'methodSource'
 	],
 	#category : 'PharoDocComment-Tests-Base',
 	#package : 'PharoDocComment-Tests',
@@ -27,6 +26,15 @@ Class {
 CommentTestCase class >> for: aDocComment [
 
 	^self new docCommentNode: aDocComment
+]
+
+{ #category : 'as yet unclassified' }
+CommentTestCase class >> for: aDocComment from: aMethod [
+
+	^ self new
+		  docCommentNode: aDocComment;
+		  methodSource: aMethod;
+		  yourself
 ]
 
 { #category : 'accessing' }
@@ -65,7 +73,7 @@ CommentTestCase >> expression [
 { #category : 'private' }
 CommentTestCase >> instanceVariablesToKeep [
 
-	^ #( 'docCommentNode' )
+	^ #( 'docCommentNode'  'methodSource' )
 ]
 
 { #category : 'accessing' }

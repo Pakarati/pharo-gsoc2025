@@ -29,7 +29,7 @@ DTCommentToTestResult >> buildNodeGroupedByTypeClassAndMethod: anOrderedCollecti
 	^ DTTreeNode new
 		  name: testResultType pluralName;
 		  subResults: ((anOrderedCollection groupedBy: [ :testCase |
-					    testCase methodNode methodClass ]) associations collect: [
+					    testCase methodSource methodClass ]) associations collect: [
 					   :assoc |
 					   DTTreeNode new
 						   name: assoc key name;

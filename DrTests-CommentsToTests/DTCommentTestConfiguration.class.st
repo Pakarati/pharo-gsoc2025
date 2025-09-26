@@ -20,6 +20,6 @@ DTCommentTestConfiguration >> asTestSuite [
 	methods := methods select: [ :m | (packagesSelected includes: m package) or: [ packagesSelected includes: m origin package ] ].
 	methods do: [ :method |
 		method pharoDocCommentNodes do: [ :docComment |
-			suite addTest: (CommentTestCase for: docComment) ] ].
+			suite addTest: (CommentTestCase for: docComment from: method ) ] ].
 	^ suite
 ]
