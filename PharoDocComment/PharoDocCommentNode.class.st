@@ -1,0 +1,104 @@
+"
+I represent a example expression (expression and value) within a method
+comment (ASTCommentNode). Every pair of Pharo expression and a separator (default "">>>"") can be styled as Pharo code and the editor iconstyler  can highlight the code and evaluate the expression.
+
+Example, within a method comment:
+
+"" 3 + 4 >>> 7""
+
+The example code should show an  expression 3 + 4 and the expected value 7.
+
+See setting on ""Code Browsing"" to enable / disable this doc comment style.
+"
+Class {
+	#name : 'PharoDocCommentNode',
+	#superclass : 'Object',
+	#instVars : [
+		'sourceNode',
+		'expression'
+	],
+	#classVars : [
+		'DocCommentEnabled'
+	],
+	#category : 'PharoDocComment-Base',
+	#package : 'PharoDocComment',
+	#tag : 'Base'
+}
+
+{ #category : 'settings' }
+PharoDocCommentNode class >> docCommentEnabled [
+	^ DocCommentEnabled  ifNil: [ DocCommentEnabled  := true ]
+]
+
+{ #category : 'settings' }
+PharoDocCommentNode class >> docCommentEnabled: aBoolean [
+	DocCommentEnabled := aBoolean
+]
+
+{ #category : 'instance creation' }
+PharoDocCommentNode class >> expression: aDocExpression inComment: aCommentNode [
+	^ self new
+		expression: aDocExpression;
+		sourceNode: aCommentNode
+		yourself
+]
+
+{ #category : 'parsing' }
+PharoDocCommentNode class >> parseDocComments: aCommentNode [
+
+	| expression |
+	expression := PharoDocCommentExpression new source: aCommentNode contents.
+	^ { (self expression: expression inComment: aCommentNode) }
+]
+
+{ #category : 'settings' }
+PharoDocCommentNode class >> settingsOn: aBuilder [
+	<systemsettings>
+	(aBuilder setting: #docCommentEnabled)
+		target: self;
+		default: true;
+		description:
+			'Allow styled and executable example expressions within method comments.
+		Example:
+		"3+4 >>> 7."';
+		label: 'Pharo doc comments';
+		parent: #codeBrowsing
+]
+
+{ #category : 'private' }
+PharoDocCommentNode >> browse [
+	| methodNode |
+	methodNode := self sourceNode methodNode.
+	(methodNode methodClass>>methodNode selector) browse
+]
+
+{ #category : 'accessing' }
+PharoDocCommentNode >> expression [
+	^ expression
+]
+
+{ #category : 'accessing' }
+PharoDocCommentNode >> expression: anObject [
+	expression := anObject.
+	expression node: self
+]
+
+{ #category : 'printing' }
+PharoDocCommentNode >> printOn: aStream [
+
+	super printOn: aStream.
+	aStream
+		nextPutAll: '(';
+		nextPutAll: self expression source;
+		nextPutAll: ')'
+]
+
+{ #category : 'accessing' }
+PharoDocCommentNode >> sourceNode [
+	^ sourceNode
+]
+
+{ #category : 'accessing' }
+PharoDocCommentNode >> sourceNode: anObject [
+	sourceNode := anObject
+]
