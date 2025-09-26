@@ -169,6 +169,24 @@ UIThemePalette >> diffEdgeColor [
 	^ paletteDictionary at: #diffEdgeColor ifAbsentPut: [ colorConfigurator diffEdgeColor ]
 ]
 
+{ #category : 'as yet unclassified' }
+UIThemePalette >> diffHighlightCoveredNodes [
+
+	^ paletteDictionary at: #diffHighlightCoveredNodes ifAbsentPut: [ colorConfigurator diffHighlightCoveredNodes ]
+]
+
+{ #category : 'as yet unclassified' }
+UIThemePalette >> diffHighlightUncoveredNodes [
+
+	^ paletteDictionary at: #diffHighlightUncoveredNodes ifAbsentPut: [ colorConfigurator diffHighlightUncoveredNodes ]
+]
+
+{ #category : 'as yet unclassified' }
+UIThemePalette >> diffHighlightYellowNodes [
+
+	^ paletteDictionary at: #diffHighlightYellowNodes ifAbsentPut: [ colorConfigurator diffHighlightYellowNodes ]
+]
+
 { #category : 'colors' }
 UIThemePalette >> diffJoinColor [
 

@@ -176,6 +176,24 @@ UIThemeColorConfigurator >> diffEdgeColor [
 	^ Color gray alpha: 0.3
 ]
 
+{ #category : 'as yet unclassified' }
+UIThemeColorConfigurator >> diffHighlightCoveredNodes [
+
+	^ (Color r: 0.74 g: 0.98 b: 0.71)
+]
+
+{ #category : 'as yet unclassified' }
+UIThemeColorConfigurator >> diffHighlightUncoveredNodes [
+
+	^ (Color r: 0.50 g: 0.71 b: 0.71)
+]
+
+{ #category : 'as yet unclassified' }
+UIThemeColorConfigurator >> diffHighlightYellowNodes [
+
+	^ (Color r: 0.98 g: 0.95 b: 0.71)
+]
+
 { #category : 'colors' }
 UIThemeColorConfigurator >> diffJoinColor [
 

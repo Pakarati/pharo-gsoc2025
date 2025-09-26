@@ -72,12 +72,6 @@ PharoDarkTheme >> buttonSelectedFillStyleFor: aButton [
 	^ SolidFillStyle color: self selectionColor
 ]
 
-{ #category : 'configuration' }
-PharoDarkTheme >> colorConfiguratorClass [
-
-	^ DarkThemeColorConfigurator
-]
-
 { #category : 'border-styles' }
 PharoDarkTheme >> configureWindowBorderFor: aWindow [
 

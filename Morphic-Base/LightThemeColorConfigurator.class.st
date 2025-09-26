@@ -39,24 +39,6 @@ LightThemeColorConfigurator >> darkBaseColor [
 	^ Color r: 200 g: 200 b: 200 range: 255
 ]
 
-{ #category : 'as yet unclassified' }
-LightThemeColorConfigurator >> diffHighlightCoveredNodes [
-
-	^ (Color r: 0.74 g: 0.98 b: 0.71)
-]
-
-{ #category : 'as yet unclassified' }
-LightThemeColorConfigurator >> diffHighlightUncoveredNodes [
-
-	^ (Color r: 0.98 g: 0.71 b: 0.71)
-]
-
-{ #category : 'as yet unclassified' }
-LightThemeColorConfigurator >> diffHighlightYellowNodes [
-
-	^ (Color r: 0.98 g: 0.95 b: 0.71)
-]
-
 { #category : 'colors' }
 LightThemeColorConfigurator >> ghostTextColor [
 

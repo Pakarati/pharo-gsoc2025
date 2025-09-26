@@ -46,12 +46,6 @@ PharoLightTheme >> buttonNormalBorderStyleFor: aButton [
 			baseColor: outerColor
 ]
 
-{ #category : 'configuration' }
-PharoLightTheme >> colorConfiguratorClass [
-
-	^ LightThemeColorConfigurator
-]
-
 { #category : 'border-styles' }
 PharoLightTheme >> configureWindowBorderFor: aWindow [
 
