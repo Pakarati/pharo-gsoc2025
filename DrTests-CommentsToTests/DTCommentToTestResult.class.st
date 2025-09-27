@@ -23,7 +23,7 @@ DTCommentToTestResult >> buildLeavesFrom: aCollection type: testResultType [
 		  DTTestLeafNode content: t type: testResultType ]
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tree building' }
 DTCommentToTestResult >> buildNodeGroupedByTypeClassAndMethod: anOrderedCollection type: testResultType [
 
 	^ DTTreeNode new
@@ -84,7 +84,7 @@ DTCommentToTestResult >> buildTreeForUI [
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tree building' }
 DTCommentToTestResult >> buildTreeForUIByClassesAndMethod [
 
 	<dtCommentToTestResultTreeNamed:

@@ -44,7 +44,7 @@ DTTestCoverageResult >> buildTreeForUI [
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tree building' }
 DTTestCoverageResult >> buildTreeForUICovered [
 
 	<dtTestCoverageResultTreeNamed: 'Covered methods' order: 3>
@@ -72,7 +72,7 @@ DTTestCoverageResult >> buildTreeForUICovered [
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tree building' }
 DTTestCoverageResult >> buildTreeForUIPartiallyCovered [
 
 	<dtTestCoverageResultTreeNamed: 'Partially covered methods' order: 2>
