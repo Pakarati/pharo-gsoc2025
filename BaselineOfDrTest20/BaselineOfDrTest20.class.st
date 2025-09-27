@@ -21,24 +21,11 @@ BaselineOfDrTest20 >> baseline: spec [
 				package: 'DrTests-TestsProfiling-Tests' with: [ spec requires: #('DrTests-TestsProfiling') ];
 				package: 'DrTests-TestCoverage-Tests-Mocks' with: [ spec requires: #('DrTests-TestCoverage') ];
 				package: 'DrTests-CommentsToTests' with: [ spec requires: #('DrTests' 'DrTests-TestsRunner') ];
-				package: 'DrTests-CommentsToTests-Tests' with: [ spec requires: #('DrTests-CommentsToTests') ].
-			self rottenTestsFinder: spec.
-			spec package: 'DrTests-RottenGreenTestsFinder' with: [ spec requires: #('rotten-tests-finder') ]. ]
+				package: 'DrTests-CommentsToTests-Tests' with: [ spec requires: #('DrTests-CommentsToTests') ].]
 ]
 
 { #category : 'baselines' }
 BaselineOfDrTest20 >> postload: loader package: packageSpec [
 
 	self tools register: DrTests as: #testRunner
-]
-
-{ #category : 'baselines' }
-BaselineOfDrTest20 >> rottenTestsFinder: spec [
-	
-	spec 
-		package: 'RottenTestsFinder';
-		package: 'RottenTestsFinder-FakeTests' with: [ spec requires: #('RottenTestsFinder') ];
-		package: 'RottenTestsFinder-Tests' with: [ spec requires: #('RottenTestsFinder') ];
-		group: 'rotten-tests-finder' with: #('RottenTestsFinder' 'RottenTestsFinder-FakeTests' 'RottenTestsFinder-Tests').
-		
 ]
