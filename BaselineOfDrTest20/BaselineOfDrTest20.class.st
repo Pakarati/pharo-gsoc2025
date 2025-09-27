@@ -14,7 +14,7 @@ BaselineOfDrTest20 >> baseline: spec [
 			spec
 				package: 'DrTests';
 				package: 'DrTests-TestsRunner' with: [ spec requires: #('DrTests') ];
-				package: 'DrTests-TestCoverage' with: [ spec requires: #('DrTests' 'Coverage') ];
+				package: 'DrTests-TestCoverage' with: [ spec requires: #('DrTests') ];
 				package: 'DrTests-TestsProfiling' with: [ spec requires: #('DrTests') ];
 				package: 'DrTests-Tests' with: [ spec requires: #('DrTests' 'DrTests-TestsRunner' 'DrTests-TestCoverage-Tests-Mocks') ];
 				package: 'DrTests-TestCoverage-Tests' with: [ spec requires: #('DrTests-TestCoverage' 'DrTests-TestCoverage-Tests-Mocks') ];
