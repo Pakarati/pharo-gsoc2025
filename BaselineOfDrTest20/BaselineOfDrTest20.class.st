@@ -21,7 +21,9 @@ BaselineOfDrTest20 >> baseline: spec [
 				package: 'DrTests-TestsProfiling-Tests' with: [ spec requires: #('DrTests-TestsProfiling') ];
 				package: 'DrTests-TestCoverage-Tests-Mocks' with: [ spec requires: #('DrTests-TestCoverage') ];
 				package: 'DrTests-CommentsToTests' with: [ spec requires: #('DrTests' 'DrTests-TestsRunner') ];
-				package: 'DrTests-CommentsToTests-Tests' with: [ spec requires: #('DrTests-CommentsToTests') ].]
+				package: 'DrTests-CommentsToTests-Tests' with: [ spec requires: #('DrTests-CommentsToTests') ];
+				package: 'PharoDocComment' with: [ spec requires: #('DrTests') ];
+				package: 'PharoDocComment-Tests' with: [ spec requires: #('PharoDocComment') ]]
 ]
 
 { #category : 'baselines' }
