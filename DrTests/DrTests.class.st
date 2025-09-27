@@ -23,7 +23,8 @@ Class {
 		'pluginsDropList',
 		'statusLabel',
 		'plugins',
-		'pluginPresenter'
+		'pluginPresenter',
+		'analysisLabel'
 	],
 	#category : 'DrTests-Spec',
 	#package : 'DrTests',

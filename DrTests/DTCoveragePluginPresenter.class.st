@@ -125,6 +125,7 @@ DTCoveragePluginPresenter >> initializeResultsTreeAndLabel [
 	resultsList
 		display: [ :node | node drTestsName ];
 		displayColor: [ :node | node displayColor ];
+		
 		children: [ :node | node subResults ];
 		actions: self rootCommandsGroup / 'Results tools'.
 

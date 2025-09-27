@@ -88,3 +88,8 @@ DTTestResultType >> name [
 DTTestResultType >> pluralName [
 	^ self name , 's'
 ]
+
+{ #category : 'icons' }
+DTTestResultType >> testResultIcon [
+	^ self iconNamed: #testNotRun
+]

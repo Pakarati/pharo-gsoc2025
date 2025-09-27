@@ -24,3 +24,8 @@ DTFailResultType >> isFail [
 DTFailResultType >> name [
 	^ 'Failure'
 ]
+
+{ #category : 'icons' }
+DTFailResultType >> testResultIcon [
+	^ self iconNamed: #testRed
+]

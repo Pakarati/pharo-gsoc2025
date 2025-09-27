@@ -24,3 +24,8 @@ DTPassResultType >> isPass [
 DTPassResultType >> name [
 	^ 'Passing test'
 ]
+
+{ #category : 'icons' }
+DTPassResultType >> testResultIcon [
+	^ self iconNamed: #testGreen
+]

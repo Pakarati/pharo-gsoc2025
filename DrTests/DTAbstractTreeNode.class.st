@@ -53,3 +53,8 @@ DTAbstractTreeNode >> shouldStartExpanded [
 DTAbstractTreeNode >> subResults [
 	^ #()
 ]
+
+{ #category : 'icons' }
+DTAbstractTreeNode >> testResultIcon [
+	^ self iconNamed:#blank.
+]

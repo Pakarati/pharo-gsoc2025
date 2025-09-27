@@ -24,3 +24,8 @@ DTErrorResultType >> isError [
 DTErrorResultType >> name [
 	^ 'Error'
 ]
+
+{ #category : 'icons' }
+DTErrorResultType >> testResultIcon [
+	^ self iconNamed: #testYellow
+]

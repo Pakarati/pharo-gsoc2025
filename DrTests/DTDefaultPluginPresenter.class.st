@@ -136,20 +136,17 @@ DTDefaultPluginPresenter >> defaultLayout [
 	^ SpBoxLayout newTopToBottom
 		add: (SpBoxLayout newTopToBottom
 			spacing: 5;
-			add: resultViewsDropList expand: false;
 			add: (SpBoxLayout newLeftToRight
 				spacing: 5;
-				add: rerunTestButton;
+				add: selectPackagesButton;
+				add: startButton;
 				add: rerunAllTestButton;
+				add: rerunTestButton;
 				yourself) expand: false;
 			add: resultLabel expand: false;
+			add: resultViewsDropList expand: false;
 			add: resultsList;
 			yourself);
-		add: (SpBoxLayout newLeftToRight
-			spacing: 10;
-			add: selectPackagesButton expand: true;
-			add: startButton expand: true;
-			yourself) expand: false;
 		yourself
 ]
 
@@ -204,12 +201,14 @@ DTDefaultPluginPresenter >> initializePresenters [
 		initializeResultViewsDropList.
 
 	startButton := self newButton.
+	startButton iconName:#play.
 	startButton action: [ drTests runPlugin ].
 	
 	selectPackagesButton := self newButton.
+	selectPackagesButton iconName:#catalog.
 	selectPackagesButton 
-	label: 'Seleccionar Paquetes';
-	action: [ self packagesPopUp ].
+		label: 'Seleccionar Paquetes';
+		action: [ self packagesPopUp ].
 ]
 
 { #category : 'initialization' }
@@ -237,6 +236,7 @@ DTDefaultPluginPresenter >> initializeResultsTreeAndLabel [
 	resultsList
 		display: [ :node | node drTestsName ];
 		displayColor: [ :node | node displayColor ];
+		displayIcon: [ :node | node testResultIcon ];
 		children: [ :node | node subResults ];
 		actions: self rootCommandsGroup / 'Results tools'.
 

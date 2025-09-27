@@ -21,6 +21,11 @@ DTTestLeafNode class >> content: anObject type: aTestResultType [
 		yourself
 ]
 
+{ #category : 'icons' }
+DTTestLeafNode >> testResultIcon [
+	^ self type ifNil:[ super testResultIcon ] ifNotNil: [self type testResultIcon]
+]
+
 { #category : 'accessing' }
 DTTestLeafNode >> type [
 	^ type
