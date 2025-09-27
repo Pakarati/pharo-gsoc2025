@@ -141,22 +141,23 @@ DTCoveragePluginPresenter >> updateSourceCodePanel: compiledMethod [
 	self defineColorCoverage: compiledMethod.
 	sourceCodePanel beForMethod: compiledMethod.
 	sourceCodePanel text: compiledMethod sourceCode.
+
 	self
 		addHighlightingOf: coveredNodes
-		withColor: self theme diffHighlightCoveredNodes .
+		withColor: self theme coveredColor.
 	self
 		addHighlightingOf: uncoveredNodes
-		withColor: self theme diffHighlightUncoveredNodes .
+		withColor: self theme notCoveredColor.
 	self
 		addHighlightingOf: yellowNodes
-		withColor: self theme diffHighlightYellowNodes .
+		withColor: self theme partiallyCoveredColor.
 
 	"Base color is green"
-	sourceCodePanel addTextSegmentDecoration:
+	"sourceCodePanel addTextSegmentDecoration:
 		(SpTextPresenterDecorator forHighlight
 			 interval: (compiledMethod ast body sourceInterval first to:
 					  compiledMethod ast body sourceInterval last + 1);
-			 highlightColor: (Color r: 0.74 g: 0.98 b: 0.71)).
+			 highlightColor: self theme highlightTextColor)."
 	^ sourceCodePanel yourself
 ]
 
