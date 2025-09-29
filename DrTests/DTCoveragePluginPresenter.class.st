@@ -70,6 +70,11 @@ DTCoveragePluginPresenter >> defaultLayout [
 		^ SpBoxLayout newTopToBottom
 		add: (SpBoxLayout newTopToBottom
 			spacing: 5;
+			add: (SpBoxLayout newLeftToRight
+				spacing: 5;
+				add: selectPackagesButton;
+				add: startButton;
+				yourself) expand: false;
 			add: resultViewsDropList expand: false;
 			add: resultLabel expand: false;
 			add: resultsList;
@@ -77,8 +82,6 @@ DTCoveragePluginPresenter >> defaultLayout [
 			yourself);
 		add: (SpBoxLayout newLeftToRight
 			spacing: 10;
-			add: selectPackagesButton expand: true;
-			add: startButton expand: true;
 			yourself) expand: false;
 		yourself
 ]

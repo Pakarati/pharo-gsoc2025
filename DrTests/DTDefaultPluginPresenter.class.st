@@ -12,8 +12,7 @@ Class {
 		'lastResults',
 		'startButton',
 		'selectPackagesButton',
-		'rerunTestButton',
-		'rerunAllTestButton'
+		'rerunFailingTestButton'
 	],
 	#category : 'DrTests-Spec',
 	#package : 'DrTests',
@@ -140,8 +139,7 @@ DTDefaultPluginPresenter >> defaultLayout [
 				spacing: 5;
 				add: selectPackagesButton;
 				add: startButton;
-				add: rerunAllTestButton;
-				add: rerunTestButton;
+				add: rerunFailingTestButton;
 				yourself) expand: false;
 			add: resultLabel expand: false;
 			add: resultViewsDropList expand: false;
@@ -225,13 +223,9 @@ DTDefaultPluginPresenter >> initializeResultsTreeAndLabel [
 
 	resultLabel := self newLabel label: 'Results:'.
 	resultsList := self newTree.
-	rerunTestButton := self newButton
-		label: 'Rerun selected test';
-		action: [ self rerunSelectedTest ];
-		yourself.
-	rerunAllTestButton := self newButton
-		label: 'Rerun all test';
-		action: [ self rerunAllTest ];
+	rerunFailingTestButton := self newButton
+		label: 'Rerun failing tests';
+		action: [ self rerunFailingTest ];
 		yourself.
 	resultsList
 		display: [ :node | node drTestsName ];
@@ -311,15 +305,9 @@ DTDefaultPluginPresenter >> plugin [
 ]
 
 { #category : 'as yet unclassified' }
-DTDefaultPluginPresenter >> rerunAllTest [
+DTDefaultPluginPresenter >> rerunFailingTest [
 
-	(DTRerunCommand forSpecContext: self) execute
-]
-
-{ #category : 'as yet unclassified' }
-DTDefaultPluginPresenter >> rerunSelectedTest [
-
-	(DTRerunSelectedTestCommand forSpecContext: self) execute
+	(DTRerunFailingCommand forSpecContext: self) execute
 ]
 
 { #category : 'accessing' }

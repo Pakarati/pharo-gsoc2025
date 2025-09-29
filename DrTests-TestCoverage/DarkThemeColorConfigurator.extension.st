@@ -2,16 +2,16 @@ Extension { #name : 'DarkThemeColorConfigurator' }
 
 { #category : '*DrTests-TestCoverage' }
 DarkThemeColorConfigurator >> coveredColor [
-	^ Color fromHexString: '90ee90'
+	^ Color fromHexString: '#003300'
 ]
 
 { #category : '*DrTests-TestCoverage' }
 DarkThemeColorConfigurator >> notCoveredColor [
-	^ Color fromHexString: '990000'
+	^ Color fromHexString: '#65000b'
 ]
 
 { #category : '*DrTests-TestCoverage' }
 DarkThemeColorConfigurator >> partiallyCoveredColor [
 
-	^ Color fromHexString: '#FFFFC5'
+	^ Color fromHexString: '#8B6914'
 ]
